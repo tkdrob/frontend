@@ -1,4 +1,3 @@
-import "./ha-divider-list-item";
 import "./ha-clickable-list-item";
 import "@material/mwc-list/mwc-list-item";
 import "@material/mwc-list/mwc-list";
@@ -168,6 +167,8 @@ class HaSidebarPanelList extends LitElement {
 
   private _recentKeydownActiveUntil = 0;
 
+  private _sortable?;
+
   // @ts-ignore
   @LocalStorage("sidebarPanelOrder", true, {
     attribute: false,
@@ -179,8 +180,6 @@ class HaSidebarPanelList extends LitElement {
     attribute: false,
   })
   private _hiddenPanels: string[] = [];
-
-  private _sortable?;
 
   protected render() {
     if (!this.hass) {
@@ -293,7 +292,7 @@ class HaSidebarPanelList extends LitElement {
           ? this._renderPanelsEdit(beforeSpacer)
           : this._renderPanels(beforeSpacer)}
 
-        <ha-divider-list-item></ha-divider-list-item>
+        
 
         
       </mwc-list>
@@ -632,9 +631,9 @@ class HaSidebarPanelList extends LitElement {
       haStyleScrollbar,
       css`
         :host {
-          height: calc(100% + var(--header-height));
-          /* position: absolute; */
-          position: relative;
+          height: calc(100% - var(--header-height) - 132px);
+          justify-content: space-between;
+          flex-direction: column;
           display: block;
           overflow: hidden;
           -ms-user-select: none;
@@ -643,10 +642,6 @@ class HaSidebarPanelList extends LitElement {
           border-right: 1px solid var(--divider-color);
           background-color: var(--sidebar-background-color);
           width: 64px;
-          /* height: calc(100% - var(--header-height) - 132px);
-          height: calc(
-            100% - var(--header-height) - 132px - env(safe-area-inset-bottom)
-          ); */
         }
         :host([expanded]) {
           width: 256px;
@@ -701,12 +696,8 @@ class HaSidebarPanelList extends LitElement {
           position: relative;
         }
 
-        ha-divider-list-item {
-          /* --ha-divider-height: calc(100vh - var(--header-height)); */
-        }
-
         mwc-list.ha-scrollbar {
-          height: 100%;
+          height: calc(100% - var(--header-height) - 42px);
           --mdc-list-vertical-padding: 4px 0;
           padding: 4px 0;
           display: flex;
@@ -715,12 +706,6 @@ class HaSidebarPanelList extends LitElement {
           overflow-x: hidden;
           background: none;
           margin-left: env(safe-area-inset-left);
-        }
-
-        mwc-list.utility-panels {
-          position: absolute;
-          bottom: 0px;
-          width: 100%;
         }
 
         :host([rtl]) mwc-list {
