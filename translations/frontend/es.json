@@ -805,7 +805,9 @@
             "more_info_control": {
                 "controls": "Controles",
                 "cover": {
+                    "close_cover": "Cerrar persiana",
                     "close_tile_cover": "Cerrar la inclinación de la persiana",
+                    "open_cover": "Abrir persiana",
                     "open_tilt_cover": "Inclinación de la persiana abierta",
                     "stop_cover": "Detener el movimiento de la persiana"
                 },
@@ -1741,6 +1743,8 @@
                 "info": {
                     "built_using": "Construido usando",
                     "caption": "Información",
+                    "copy_github": "Para GitHub",
+                    "copy_raw": "Texto sin procesar",
                     "custom_uis": "IU personalizadas:",
                     "description": "Ver información sobre tu instalación de Home Assistant",
                     "developed_by": "Desarrollado por un montón de gente impresionante.",

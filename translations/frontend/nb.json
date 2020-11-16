@@ -805,7 +805,9 @@
             "more_info_control": {
                 "controls": "Kontroller",
                 "cover": {
+                    "close_cover": "Lukk dekselet",
                     "close_tile_cover": "Lukk dekkevinkel",
+                    "open_cover": "Åpne dekselet",
                     "open_tilt_cover": "Åpne dekkevinkel",
                     "stop_cover": "Stopp dekke fra å bevege seg"
                 },
@@ -1741,6 +1743,8 @@
                 "info": {
                     "built_using": "Bygget med",
                     "caption": "Informasjon",
+                    "copy_github": "",
+                    "copy_raw": "Rå tekst",
                     "custom_uis": "Tilpassede brukergrensesnitt:",
                     "description": "Vise informasjon om installasjonen av Home Assistant",
                     "developed_by": "Utviklet av en gjeng med fantastiske mennesker.",

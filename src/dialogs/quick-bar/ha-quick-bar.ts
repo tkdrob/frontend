@@ -226,6 +226,7 @@ export class QuickBar extends LitElement {
         .item=${item}
         index=${ifDefined(index)}
         graphic="icon"
+        class=${this._commandMode ? "command-item" : ""}
       >
         ${item.iconPath
           ? html`<ha-svg-icon

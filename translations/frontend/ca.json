@@ -584,7 +584,7 @@
                 "entries_not_found": "No s'han trobat entrades al registre.",
                 "messages": {
                     "became_unavailable": "no està disponible",
-                    "changed_to_state": "a canviat a {state}",
+                    "changed_to_state": "ha canviat a {state}",
                     "cleared_device_class": "s'ha esborrat (no s'ha detectat cap {device_class})",
                     "detected_device_class": "s'ha detectat {device_class}",
                     "rose": "rosa",
@@ -805,7 +805,9 @@
             "more_info_control": {
                 "controls": "Controls",
                 "cover": {
+                    "close_cover": "Tanca la coberta",
                     "close_tile_cover": "Inclinació de la coberta tancada",
+                    "open_cover": "Obre la coberta",
                     "open_tilt_cover": "Inclinació de la coberta oberta",
                     "stop_cover": "Atura el moviment de la coberta"
                 },
@@ -1741,6 +1743,8 @@
                 "info": {
                     "built_using": "Creat utilitzant",
                     "caption": "Informació",
+                    "copy_github": "Per GitHub",
+                    "copy_raw": "Text en brut",
                     "custom_uis": "Interfícies d'usuari personalitzades:",
                     "description": "Consulta informació de la teva instal·lació de Home Assistant",
                     "developed_by": "Desenvolupat per un munt de gent fantàstica.",
