@@ -86,18 +86,8 @@ export class HassioSnapshotsTable extends LitElement {
           title: "Type",
           width: "15%",
           sortable: true,
-          filterable: true,
           template: (entry: string) => {
             return entry === "partial" ? "Partial" : "Full";
-          },
-        };
-        collums.protected = {
-          title: "Protected",
-          width: "15%",
-          sortable: true,
-          filterable: true,
-          template: (entry: boolean) => {
-            return entry ? "True" : "False";
           },
         };
       }
