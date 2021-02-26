@@ -10,6 +10,7 @@ import "./addon-store/hassio-addon-store";
 import "./dashboard/hassio-dashboard";
 // Don't codesplit the others, because it breaks the UI when pushed to a Pi
 import "./snapshots/hassio-snapshots";
+import "./snapshots/hassio-snapshots-table";
 import "./system/hassio-system";
 
 @customElement("hassio-panel-router")
@@ -31,7 +32,7 @@ class HassioPanelRouter extends HassRouterPage {
         tag: "hassio-addon-store",
       },
       snapshots: {
-        tag: "hassio-snapshots",
+        tag: "hassio-snapshots-table",
       },
       system: {
         tag: "hassio-system",
