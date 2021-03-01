@@ -282,6 +282,15 @@ class HassioSnapshots extends LitElement {
     }
   }
 
+  private async _updateSnapshots() {
+    try {
+      this._snapshots = await fetchHassioSnapshots(this.hass);
+      this._snapshots.sort((a, b) => (a.date < b.date ? 1 : -1));
+    } catch (err) {
+      this._error = extractApiErrorMessage(err);
+    }
+  }
+
   private _handleAction(ev: CustomEvent<ActionDetail>) {
     switch (ev.detail.index) {
       case 0:
@@ -320,15 +329,6 @@ class HassioSnapshots extends LitElement {
     this._addonList = this._addonList.map((addon, curIdx) =>
       curIdx === idx ? { ...addon, checked } : addon
     );
-  }
-
-  private async _updateSnapshots() {
-    try {
-      this._snapshots = await fetchHassioSnapshots(this.hass);
-      this._snapshots.sort((a, b) => (a.date < b.date ? 1 : -1));
-    } catch (err) {
-      this._error = extractApiErrorMessage(err);
-    }
   }
 
   private async _createSnapshot(ev: CustomEvent): Promise<void> {

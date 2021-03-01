@@ -27,6 +27,7 @@ export interface HassioFullSnapshotCreateParams {
   name: string;
   password?: string;
 }
+
 export interface HassioPartialSnapshotCreateParams {
   name: string;
   folders?: string[];
